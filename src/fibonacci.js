@@ -32,13 +32,16 @@ function fibsRec(n) {
   return [...fibsRec(n - 1), fibsRec(n - 1)[n - 3] + fibsRec(n-1)[n-2]];
 } 
 
+function testFibonacciFunctions(func) {
+  console.log(func(-1)); // Please enter a valid number
+  console.log(func(0)); // []
+  console.log(func(1)); // [0]
+  console.log(func(2)); // [0, 1]
+  console.log(func(3)); // [0, 1, 1]
+  console.log(func(5)); // [0, 1, 1, 2, 3]
+  console.log(func(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
+}
 
-console.log(fibs(-1)); // Please enter a valid number
-console.log(fibs(0)); // []
-console.log(fibs(1)); // [0]
-console.log(fibs(2)); // [0, 1]
-console.log(fibs(3)); // [0, 1, 1]
-console.log(fibs(5)); // [0, 1, 1, 2, 3]
-console.log(fibs(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
 
-
+testFibonacciFunctions(fibs);
+testFibonacciFunctions(fibsRec);
