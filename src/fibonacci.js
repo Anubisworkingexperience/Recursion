@@ -16,6 +16,23 @@ function fibs(n) {
   return fibArray;
 }
 
+function fibsRec(n) {
+  if (n < 0) {
+    return 'Please enter a valid number';
+  }
+  if (n === 0) {
+    return [];
+  }
+  if (n == 1) {
+    return [0];
+  }
+  if (n == 2) {
+    return [0, 1];
+  }
+  return [...fibsRec(n - 1), fibsRec(n - 1)[n - 3] + fibsRec(n-1)[n-2]];
+} 
+
+
 console.log(fibs(-1)); // Please enter a valid number
 console.log(fibs(0)); // []
 console.log(fibs(1)); // [0]
